@@ -4,7 +4,8 @@ def fibonacci(n):
     else:
         return fibonacci(n - 1) + fibonacci(n - 2)
 
-
+# non recursive method much faster
+# than recursive method alhtough both seem to be O(n)
 def fib_not_recursive(n):
     if n <= 2:
         return 1
@@ -18,5 +19,5 @@ def fib_not_recursive(n):
 
 if __name__ == '__main__':
     print(fibonacci(4))
-    print(fibonacci(55))
-    print(fib_not_recursive(55))
+    print(fibonacci(40))
+    print(fib_not_recursive(40))
