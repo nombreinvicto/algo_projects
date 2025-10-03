@@ -51,6 +51,36 @@ def nested_even_sum(obj: dict) -> int:
     return global_sum
 
 
+# %% ##################################################################
+obj = {
+    'stuff': "foo",
+    'data': {
+        'val': {
+            'thing': {
+                'info': "bar",
+                'moreInfo': {
+                    'evenMoreInfo': {
+                        'weMadeIt': "baz"
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+def collect_strings(obj: dict):
+    if len(obj) > 0:
+        key, val = obj.popitem()
+        if isinstance(val, str):
+            return [val] + collect_strings(obj)
+        else:
+            return collect_strings(val) + collect_strings(obj)
+    else:
+        return []
+
+
 if __name__ == '__main__':
     # print(capitalize_first(['car', 'taco', 'banana']))
-    print(nested_even_sum(obj2))
+    # print(nested_even_sum(obj2))
+    print(collect_strings(obj))
