@@ -15,8 +15,10 @@ def binary_search(arr: list, target: int):
         else:
             left_ptr = search_ptr + 1
 
+
+def naive_string_search(long_str: str, short_str: str):
+    pass
+
+
 if __name__ == '__main__':
-    print(binary_search([1,2,3,4,5],2))
-    print(binary_search([1,2,3,4,5],3))
-    print(binary_search([1,2,3,4,5],5))
-    print(binary_search([1,2,3,4,5],6))
+    pass
