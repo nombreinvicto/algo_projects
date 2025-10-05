@@ -17,8 +17,25 @@ def binary_search(arr: list, target: int):
 
 
 def naive_string_search(long_str: str, short_str: str):
-    pass
+    for i, _ in enumerate(long_str):
+        for j, _ in enumerate(short_str):
+            try:
+                if short_str[j] == long_str[i + j]:
+                    continue
+                else:
+                    break
+            except IndexError:
+                # this will never happen
+                return False
+        else:
+            # this will only happen if all characters have matched
+            return True
+    return False
 
 
 if __name__ == '__main__':
-    pass
+    print(naive_string_search("lorie loled", "lol"))
+    print(naive_string_search("lorie loled", "ed"))
+    print(naive_string_search("lorie loled", "sucre"))
+    print(naive_string_search("lorie loled", "d"))
+    print(naive_string_search("lorie loled", "ie "))
