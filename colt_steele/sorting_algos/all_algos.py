@@ -4,18 +4,16 @@ def bubble_sort(arr):
 
     print(arr)
     for i in range(len(arr) - 1, -1, -1):
-        called_swap = False
+        # lets increment j from 0 upto 1 step before ith position
+        # because j+1 will be the ith position
         for j in range(0, i, 1):
             print(i, j)
+            print(f"comparing : {arr[j]} - {arr[j + 1]}")
             if arr[j] > arr[j + 1]:
                 swap(arr, j, j + 1)
-                called_swap = True
                 print("swap called")
             print(f"[INFO] array after pass: {arr}......")
             print("=" * 50)
-        if not called_swap:
-            return arr
-
 
 
 if __name__ == '__main__':
